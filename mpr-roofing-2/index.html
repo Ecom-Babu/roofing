@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0A0D12" />
+  <meta name="description" content="MPR Roofing & Plastering provides roofing, roof repairs, flat roofs, solar panel mounting, fascias, guttering, lime mortar repointing and plastering across Peterlee and the North East. Call Michael for a free, no-obligation quote." />
+  <meta name="robots" content="index,follow" />
+  <title>MPR Roofing & Plastering | Peterlee & North East</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { mpr: { blue: '#0095EB', hover: '#0284C7', ink: '#0A0D12', panel: '#111827', amber: '#FACC15' } },
+        fontFamily: { display: ['Montserrat', 'sans-serif'], body: ['Inter', 'sans-serif'] },
+        boxShadow: { glow: '0 12px 40px rgba(0,149,235,.20)' }
+      }}
+    };
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    :root { --blue:#0095EB; --blue-hover:#0284C7; --ink:#0A0D12; --panel:#111827; --light:#F8FAFC; --amber:#FACC15; }
+    html { scroll-behavior:smooth; scroll-padding-top:100px; }
+    body { font-family:Inter,sans-serif; background:#fff; color:#111827; }
+    h1,h2,h3,h4,.display { font-family:Montserrat,sans-serif; }
+    .nav-link { color:#cbd5e1; font-size:.83rem; font-weight:700; letter-spacing:.04em; transition:color .2s; }
+    .nav-link:hover,.nav-link:focus { color:#38bdf8; }
+    .btn-primary { background:var(--blue); color:white; transition:transform .2s,background .2s,box-shadow .2s; }
+    .btn-primary:hover { background:var(--blue-hover); transform:translateY(-2px); box-shadow:0 10px 28px rgba(0,149,235,.25); }
+    .btn-outline { border:1px solid rgba(255,255,255,.3); color:white; transition:all .2s; }
+    .btn-outline:hover { border-color:var(--blue); background:rgba(0,149,235,.12); }
+    .section-kicker { color:var(--blue); font-size:.72rem; font-weight:800; letter-spacing:.18em; text-transform:uppercase; }
+    .service-card { border:1px solid #e2e8f0; transition:transform .25s,box-shadow .25s,border-color .25s; }
+    .service-card:hover { transform:translateY(-5px); border-color:#bae6fd; box-shadow:0 18px 40px rgba(15,23,42,.09); }
+    .project-card { cursor:pointer; transition:transform .25s,box-shadow .25s; }
+    .project-card:hover { transform:translateY(-5px); box-shadow:0 20px 45px rgba(2,8,23,.15); }
+    .project-image { aspect-ratio: 16 / 10; background:#111827; }
+    .project-image img { width:100%; height:100%; object-fit:cover; transition:transform .45s; }
+    .project-card:hover .project-image img { transform:scale(1.04); }
+    .image-placeholder { min-height:180px; background:linear-gradient(135deg,#0A0D12,#172b42); color:#94a3b8; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:.55rem; text-align:center; padding:1rem; }
+    .filter-btn { border:1px solid #cbd5e1; color:#475569; transition:all .2s; }
+    .filter-btn.active,.filter-btn:hover { color:white; background:#0A0D12; border-color:#0A0D12; }
+    .detail-gallery-grid { columns:1; column-gap:1rem; }
+    .detail-gallery-grid button { display:block; width:100%; margin:0 0 1rem; break-inside:avoid; overflow:hidden; border-radius:1rem; background:#0f172a; }
+    .detail-gallery-grid img { display:block; width:100%; height:auto; transition:transform .3s; }
+    .detail-gallery-grid button:hover img { transform:scale(1.025); }
+    @media(min-width:640px){.detail-gallery-grid{columns:2}}
+    @media(min-width:1024px){.detail-gallery-grid{columns:3}}
+    .thumb { width:82px; height:66px; flex:0 0 auto; border:2px solid transparent; border-radius:.6rem; overflow:hidden; opacity:.72; }
+    .thumb.active { border-color:var(--blue); opacity:1; }
+    .thumb img { width:100%; height:100%; object-fit:cover; }
+    .viewer-image { width:100%; height:min(64vh,620px); object-fit:contain; background:#05080d; }
+    .mobile-action-bar { padding-bottom:env(safe-area-inset-bottom); }
+    .form-field { width:100%; border:1px solid #cbd5e1; border-radius:.75rem; padding:.85rem 1rem; background:#fff; color:#0f172a; outline:none; transition:border .2s,box-shadow .2s; }
+    .form-field:focus { border-color:var(--blue); box-shadow:0 0 0 3px rgba(0,149,235,.13); }
+    .form-field:invalid:not(:placeholder-shown) { border-color:#ef4444; }
+    .fade-in { animation:fadeIn .28s ease both; }
+    @keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+    .hero-shade { background:linear-gradient(90deg,rgba(5,9,15,.97) 0%,rgba(5,9,15,.88) 48%,rgba(5,9,15,.55) 100%),linear-gradient(0deg,rgba(5,9,15,.65),transparent 55%); }
+    .map-frame { filter:grayscale(.15) contrast(1.03); }
+    @media(max-width:767px){body{padding-bottom:76px}.desktop-dock{display:none!important}}
+    @media(min-width:768px){.mobile-action-bar{display:none!important}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"RoofingContractor",
+    "name":"MPR Roofing & Plastering",
+    "alternateName":"MPR Roofing",
+    "telephone":"+447530686622",
+    "email":"mprroofing@hotmail.com",
+    "address":{"@type":"PostalAddress","streetAddress":"43 Abbeydale Gardens","addressLocality":"Peterlee","addressRegion":"County Durham","postalCode":"DH6 2TS","addressCountry":"GB"},
+    "areaServed":["Peterlee","County Durham","Sunderland","Hartlepool","Seaham","North East England"],
+    "openingHours":"Mo-Su 00:00-23:59"
+  }
+  </script>
+</head>
+<body class="font-body antialiased">
+  <!-- Emergency notice -->
+  <div class="bg-mpr-blue text-white">
+    <div class="max-w-7xl mx-auto px-4 py-2.5 flex flex-col sm:flex-row items-center justify-center gap-x-4 gap-y-1 text-center text-xs sm:text-sm font-semibold">
+      <span><i class="fa-solid fa-cloud-bolt mr-2 text-yellow-200"></i>Heavy rainfall or storm damage? Ask about a FREE roof inspection across Peterlee & the North East.</span>
+      <span class="flex items-center gap-3 whitespace-nowrap"><a class="underline underline-offset-2" href="tel:+447530686622">07530 686622</a><span class="opacity-60">|</span><a class="underline underline-offset-2" href="tel:+441915261451">0191 526 1451</a></span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header id="site-header" class="sticky top-0 z-40 bg-mpr-ink/95 backdrop-blur border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="h-[76px] flex items-center justify-between gap-4">
+        <a href="#home" class="flex items-center gap-3 min-w-0" aria-label="MPR Roofing home" onclick="showMainAndScroll('home',event)">
+          <img src="logo.jpg" alt="MPR Roofing & Plastering Logo" class="h-12 w-16 sm:w-[78px] object-contain rounded" onerror="this.style.display='none';document.getElementById('logo-fallback').classList.remove('hidden')" />
+          <span id="logo-fallback" class="hidden h-11 w-14 rounded bg-slate-900 border border-sky-500/50 text-sky-400 font-black items-center justify-center">MPR</span>
+          <span class="min-w-0"><span class="block display text-white font-extrabold tracking-tight text-sm sm:text-base leading-tight">MPR ROOFING</span><span class="block text-[9px] sm:text-[10px] text-slate-400 uppercase tracking-[.19em]">& Plastering</span></span>
+        </a>
+        <nav class="hidden lg:flex items-center gap-6" aria-label="Main navigation">
+          <a class="nav-link" href="#services" onclick="showMainAndScroll('services',event)">Services</a>
+          <a class="nav-link" href="#projects" onclick="showMainAndScroll('projects',event)">Projects</a>
+          <a class="nav-link" href="#why-us" onclick="showMainAndScroll('why-us',event)">Why MPR</a>
+          <a class="nav-link" href="#reviews" onclick="showMainAndScroll('reviews',event)">Reviews</a>
+          <a class="nav-link" href="#quote" onclick="showMainAndScroll('quote',event)">Free Quote</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-2">
+          <a href="tel:+447530686622" class="rounded-lg bg-mpr-blue hover:bg-mpr-hover px-4 py-2.5 text-white text-xs font-extrabold whitespace-nowrap"><i class="fa-solid fa-phone mr-2"></i>07530 686622</a>
+          <a href="https://wa.me/447530686622?text=Hi%20Michael%2C%20I%20visited%20the%20MPR%20Roofing%20website%20and%20would%20like%20to%20request%20a%20free%20roof%20inspection%20%2F%20quote." target="_blank" rel="noopener" class="rounded-lg border border-emerald-500/50 text-emerald-300 hover:bg-emerald-500/10 px-3 py-2.5 text-xs font-bold"><i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp</a>
+        </div>
+        <button id="menu-toggle" class="lg:hidden text-white p-2 text-xl" aria-label="Open navigation menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+      </div>
+      <nav id="mobile-menu" class="hidden lg:hidden border-t border-white/10 py-3 pb-5 grid grid-cols-2 gap-3" aria-label="Mobile navigation">
+        <a class="nav-link py-2" href="#services" onclick="showMainAndScroll('services',event)">Services</a>
+        <a class="nav-link py-2" href="#projects" onclick="showMainAndScroll('projects',event)">Completed Projects</a>
+        <a class="nav-link py-2" href="#why-us" onclick="showMainAndScroll('why-us',event)">Why Choose Us</a>
+        <a class="nav-link py-2" href="#reviews" onclick="showMainAndScroll('reviews',event)">Reviews</a>
+        <a class="nav-link py-2" href="#quote" onclick="showMainAndScroll('quote',event)">Get a Free Quote</a>
+        <a class="nav-link py-2" href="tel:+447530686622">Call Michael</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-view">
+    <!-- Hero -->
+    <section id="home" class="relative min-h-[640px] flex items-center bg-mpr-ink overflow-hidden">
+      <img src="3%20oct%20double%20roofing.jpg" alt="MPR Roofing double roof and solar installation" class="absolute inset-0 w-full h-full object-cover opacity-45" onerror="this.style.display='none'" />
+      <div class="hero-shade absolute inset-0"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-28 w-full">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-2 rounded-full border border-sky-400/35 bg-sky-400/10 px-4 py-2 text-sky-100 text-xs sm:text-sm font-bold mb-7"><i class="fa-solid fa-star text-yellow-400"></i> 88% Recommend <span class="text-sky-200/50">•</span> 19 Facebook Reviews <span class="hidden sm:inline text-sky-200/50">•</span><span class="hidden sm:inline">Local Peterlee Roofers</span></div>
+          <p class="section-kicker text-sky-300 mb-4">Peterlee · County Durham · North East</p>
+          <h1 class="display text-white font-black uppercase tracking-tight text-4xl sm:text-5xl lg:text-6xl leading-[1.08]">Roofing & plastering solutions <span class="text-mpr-blue">built to last.</span></h1>
+          <p class="mt-6 max-w-2xl text-slate-300 text-base sm:text-lg leading-relaxed">From a single slipped tile or storm leak to full double-roof replacements, solar installations and breathable lime mortar repointing — Michael and the local MPR squad help keep North East homes dry, safe and protected.</p>
+          <div class="mt-8 flex flex-col sm:flex-row flex-wrap gap-3">
+            <a href="tel:+447530686622" class="btn-primary inline-flex justify-center items-center gap-3 rounded-xl px-6 py-4 font-extrabold"><i class="fa-solid fa-phone"></i><span>Call 07530 686622</span><span class="text-xs font-medium text-white/75">Free inspection</span></a>
+            <a href="https://wa.me/447530686622?text=Hi%20Michael%2C%20I%27d%20like%20to%20request%20a%20free%20roofing%20or%20plastering%20quote." target="_blank" rel="noopener" class="btn-outline inline-flex justify-center items-center gap-2 rounded-xl px-6 py-4 font-bold"><i class="fa-brands fa-whatsapp text-xl text-emerald-400"></i> WhatsApp Instant Quote</a>
+            <a href="mailto:mprroofing@hotmail.com?subject=Free%20Roofing%20%2F%20Plastering%20Quote%20Enquiry&body=Hi%20Michael%2C%0A%0AI%20would%20like%20to%20arrange%20a%20free%20no-obligation%20quote.%0A%0AName%3A%20%0APostcode%3A%20%0APhone%3A%20%0ADetails%20of%20work%20needed%3A%20" class="btn-outline inline-flex justify-center items-center gap-2 rounded-xl px-6 py-4 font-bold"><i class="fa-regular fa-envelope"></i> Email Us</a>
+          </div>
+          <div class="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-xs sm:text-sm text-slate-300">
+            <span><i class="fa-solid fa-circle-check text-sky-400 mr-2"></i>Free no-obligation quotes</span>
+            <span><i class="fa-solid fa-clock text-sky-400 mr-2"></i>24/7 emergency call-outs</span>
+            <span><i class="fa-solid fa-house text-sky-400 mr-2"></i>Single tile to full roofs</span>
+            <span><i class="fa-solid fa-location-dot text-sky-400 mr-2"></i>Local Peterlee team</span>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-0 right-0 hidden xl:block w-1/3 h-1 bg-gradient-to-l from-mpr-blue to-transparent"></div>
+    </section>
+
+    <!-- Quick trust strip -->
+    <section class="bg-white border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 grid grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="flex items-center gap-3"><span class="h-11 w-11 rounded-xl bg-sky-50 text-mpr-blue grid place-items-center text-lg"><i class="fa-solid fa-house-circle-check"></i></span><div><p class="font-extrabold text-slate-900 text-sm">Local & Reliable</p><p class="text-slate-500 text-xs">Peterlee based team</p></div></div>
+        <div class="flex items-center gap-3"><span class="h-11 w-11 rounded-xl bg-sky-50 text-mpr-blue grid place-items-center text-lg"><i class="fa-solid fa-clipboard-check"></i></span><div><p class="font-extrabold text-slate-900 text-sm">Free Inspections</p><p class="text-slate-500 text-xs">No-obligation quotes</p></div></div>
+        <div class="flex items-center gap-3"><span class="h-11 w-11 rounded-xl bg-sky-50 text-mpr-blue grid place-items-center text-lg"><i class="fa-solid fa-cloud-bolt"></i></span><div><p class="font-extrabold text-slate-900 text-sm">Emergency Help</p><p class="text-slate-500 text-xs">Storm repair enquiries 24/7</p></div></div>
+        <div class="flex items-center gap-3"><span class="h-11 w-11 rounded-xl bg-sky-50 text-mpr-blue grid place-items-center text-lg"><i class="fa-solid fa-handshake"></i></span><div><p class="font-extrabold text-slate-900 text-sm">Trusted Locally</p><p class="text-slate-500 text-xs">88% recommend rating</p></div></div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-20 sm:py-24 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="max-w-2xl mb-12"><p class="section-kicker">What we do</p><h2 class="display mt-3 text-3xl sm:text-4xl font-extrabold text-slate-950">One local team. <span class="text-mpr-blue">Complete property protection.</span></h2><p class="mt-4 text-slate-600 leading-relaxed">From urgent roof repairs to planned exterior upgrades and specialist plastering, speak to Michael about the work your property needs.</p></div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <article class="service-card bg-white rounded-2xl p-6"><div class="h-12 w-12 rounded-xl bg-sky-50 text-mpr-blue grid place-items-center text-xl"><i class="fa-solid fa-house-chimney"></i></div><h3 class="mt-5 font-extrabold text-slate-900 text-lg">Full Roof Replacements & Pitched Roofs</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">Slating, interlocking tiles, double roofs, breathable membranes and treated battens.</p><a class="inline-flex mt-5 text-sm font-extrabold text-mpr-blue hover:text-mpr-hover" href="https://wa.me/447530686622?text=Hi%20Michael%2C%20I%27m%20enquiring%20about%20full%20roof%20replacements%20and%20pitched%20roofing." target="_blank" rel="noopener">Enquire on WhatsApp <span class="ml-2">→</span></a></article>
+          <article class="service-card bg-white rounded-2xl p-6"><div class="h-12 w-12 rounded-xl bg-sky-50 text-mpr-blue grid place-items-center text-xl"><i class="fa-solid fa-layer-group"></i></div><h3 class="mt-5 font-extrabold text-slate-900 text-lg">Flat Roof Installations & Repairs</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">Modern weatherproof flat roofing systems, skylight domes and garage or extension roofs.</p><a class="inline-flex mt-5 text-sm font-extrabold text-mpr-blue" href="https://wa.me/447530686622?text=Hi%20Michael%2C%20I%27m%20enquiring%20about%20flat%20roof%20installations%20or%20repairs." target="_blank" rel="noopener">Enquire on WhatsApp <span class="ml-2">→</span></a></article>
+          <article class="service-card bg-white rounded-2xl p-6"><div class="h-12 w-12 rounded-xl bg-sky-50 text-mpr-blue grid place-items-center text-xl"><i class="fa-solid fa-cloud-showers-heavy"></i></div><h3 class="mt-5 font-extrabold text-slate-900 text-lg">Emergency Roof Repairs & Storm Damage</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">Help with missing tiles, heavy-rainfall leaks and urgent structural weatherproofing.</p><a class="inline-flex mt-5 text-sm font-extrabold text-mpr-blue" href="https://wa.me/447530686622?text=Hi%20Michael%2C%20I%20need%20help%20with%20an%20emergency%20roof%20repair%20or%20storm%20damage." target="_blank" rel="noopener">Enquire on WhatsApp <span class="ml-2">→</span></a></article>
+          <article class="service-card bg-white rounded-2xl p-6"><div class="h-12 w-12 rounded-xl bg-sky-50 text-mpr-blue grid place-items-center text-xl"><i class="fa-solid fa-solar-panel"></i></div><h3 class="mt-5 font-extrabold text-slate-900 text-lg">Solar Panel Mounting & Bird-Proofing</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">Flush on-roof solar panel installations and protective perimeter mesh.</p><a class="inline-flex mt-5 text-sm font-extrabold text-mpr-blue" href="https://wa.me/447530686622?text=Hi%20Michael%2C%20I%27m%20enquiring%20about%20solar%20panel%20mounting%20or%20bird-proofing." target="_blank" rel="noopener">Enquire on WhatsApp <span class="ml-2">→</span></a></article>
+          <article class="service-card bg-white rounded-2xl p-6"><div class="h-12 w-12 rounded-xl bg-sky-50 text-mpr-blue grid place-items-center text-xl"><i class="fa-solid fa-border-all"></i></div><h3 class="mt-5 font-extrabold text-slate-900 text-lg">Dormer Cladding, Fascias, Soffits & Guttering</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">UPVC fascia boards, high-flow guttering and modern anthracite exterior cladding.</p><a class="inline-flex mt-5 text-sm font-extrabold text-mpr-blue" href="https://wa.me/447530686622?text=Hi%20Michael%2C%20I%27m%20enquiring%20about%20dormer%20cladding%2C%20fascias%2C%20soffits%20or%20guttering." target="_blank" rel="noopener">Enquire on WhatsApp <span class="ml-2">→</span></a></article>
+          <article class="service-card bg-white rounded-2xl p-6"><div class="h-12 w-12 rounded-xl bg-sky-50 text-mpr-blue grid place-items-center text-xl"><i class="fa-solid fa-trowel-bricks"></i></div><h3 class="mt-5 font-extrabold text-slate-900 text-lg">Chimney Removal & Precision Leadwork</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">Chimney stack removal, lead valleys, step flashing and ridge work.</p><a class="inline-flex mt-5 text-sm font-extrabold text-mpr-blue" href="https://wa.me/447530686622?text=Hi%20Michael%2C%20I%27m%20enquiring%20about%20chimney%20work%20or%20leadwork." target="_blank" rel="noopener">Enquire on WhatsApp <span class="ml-2">→</span></a></article>
+          <article class="service-card bg-white rounded-2xl p-6"><div class="h-12 w-12 rounded-xl bg-sky-50 text-mpr-blue grid place-items-center text-xl"><i class="fa-solid fa-brush"></i></div><h3 class="mt-5 font-extrabold text-slate-900 text-lg">Lime Mortar Repointing & Sandblasting</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">Remove damaging cement render, prepare masonry and apply traditional breathable lime mortar.</p><a class="inline-flex mt-5 text-sm font-extrabold text-mpr-blue" href="https://wa.me/447530686622?text=Hi%20Michael%2C%20I%27m%20enquiring%20about%20lime%20mortar%20repointing%20or%20sandblasting." target="_blank" rel="noopener">Enquire on WhatsApp <span class="ml-2">→</span></a></article>
+          <article class="service-card bg-white rounded-2xl p-6"><div class="h-12 w-12 rounded-xl bg-sky-50 text-mpr-blue grid place-items-center text-xl"><i class="fa-solid fa-paint-roller"></i></div><h3 class="mt-5 font-extrabold text-slate-900 text-lg">Plastering, Rendering & Outbuilding Floors</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">Internal and external plastering, replacement window sills and concrete floor installations.</p><a class="inline-flex mt-5 text-sm font-extrabold text-mpr-blue" href="https://wa.me/447530686622?text=Hi%20Michael%2C%20I%27m%20enquiring%20about%20plastering%2C%20rendering%20or%20outbuilding%20floors." target="_blank" rel="noopener">Enquire on WhatsApp <span class="ml-2">→</span></a></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-20 sm:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-7 mb-10">
+          <div class="max-w-2xl"><p class="section-kicker">Recent work</p><h2 class="display mt-3 text-3xl sm:text-4xl font-extrabold text-slate-950">Completed <span class="text-mpr-blue">projects.</span></h2><p class="mt-4 text-slate-600 leading-relaxed">Take a closer look at recent roofing, solar, cladding and masonry work completed by the MPR team.</p></div>
+          <div id="project-filters" class="flex flex-wrap gap-2">
+            <button class="filter-btn active rounded-full px-4 py-2 text-xs font-bold" data-filter="all">All Projects</button>
+            <button class="filter-btn rounded-full px-4 py-2 text-xs font-bold" data-filter="roof">Full Roofs & Solar</button>
+            <button class="filter-btn rounded-full px-4 py-2 text-xs font-bold" data-filter="flat">Flat Roofs</button>
+            <button class="filter-btn rounded-full px-4 py-2 text-xs font-bold" data-filter="cladding">Cladding & Fascias</button>
+            <button class="filter-btn rounded-full px-4 py-2 text-xs font-bold" data-filter="plaster">Plastering & Lime Mortar</button>
+          </div>
+        </div>
+        <div id="projects-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+      </div>
+    </section>
+
+    <!-- Why us + video -->
+    <section id="why-us" class="py-20 sm:py-24 bg-mpr-ink text-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
+        <div><p class="section-kicker text-sky-300">Why North East homeowners trust MPR</p><h2 class="display mt-3 text-3xl sm:text-4xl font-extrabold leading-tight">Your roof is the only thing between your home and <span class="text-mpr-blue">the weather.</span></h2><p class="mt-5 text-slate-300 leading-relaxed">Keep local lads on your roof — people you can speak to, who understand the homes and weather of the North East. From the first inspection to the finished detail, Michael and the MPR team focus on practical work that protects your property.</p>
+          <div class="mt-8 grid sm:grid-cols-2 gap-5">
+            <div class="flex gap-3"><i class="fa-solid fa-user-shield text-sky-400 mt-1"></i><div><h3 class="font-bold">A local point of contact</h3><p class="text-sm text-slate-400 mt-1">Speak directly with Michael about your job.</p></div></div>
+            <div class="flex gap-3"><i class="fa-solid fa-list-check text-sky-400 mt-1"></i><div><h3 class="font-bold">Work explained clearly</h3><p class="text-sm text-slate-400 mt-1">Discuss the issue and the work required.</p></div></div>
+            <div class="flex gap-3"><i class="fa-solid fa-cloud-rain text-sky-400 mt-1"></i><div><h3 class="font-bold">Roofing & property care</h3><p class="text-sm text-slate-400 mt-1">From small repairs to larger renovations.</p></div></div>
+            <div class="flex gap-3"><i class="fa-solid fa-comments text-sky-400 mt-1"></i><div><h3 class="font-bold">Easy to get in touch</h3><p class="text-sm text-slate-400 mt-1">Call, WhatsApp or email the team.</p></div></div>
+          </div>
+          <a href="#quote" onclick="showMainAndScroll('quote',event)" class="btn-primary inline-flex mt-9 rounded-xl px-6 py-3.5 font-extrabold">Talk to Michael <i class="fa-solid fa-arrow-right ml-3"></i></a>
+        </div>
+        <div class="rounded-2xl overflow-hidden bg-slate-900 border border-white/10 shadow-2xl">
+          <div class="px-5 py-4 flex items-center justify-between"><div><p class="font-bold">MPR Roofing in action</p><p class="text-xs text-slate-400 mt-1">A look at the team's work</p></div><span class="text-xs rounded-full bg-white/10 px-3 py-1 text-slate-300">Project reel</span></div>
+          <video class="w-full aspect-video bg-black object-contain" controls playsinline preload="metadata" poster="3%20oct%20double%20roofing.jpg">
+            <source src="15%20april%20reel.mp4" type="video/mp4" />Your browser does not support HTML5 video. The video file may not be available in this website folder.
+          </video>
+          <p class="px-5 py-3 text-xs text-slate-400">Video playback requires <span class="text-slate-200">15 april reel.mp4</span> to be uploaded alongside this page.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="py-20 sm:py-24 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto"><p class="section-kicker">Local feedback</p><h2 class="display mt-3 text-3xl sm:text-4xl font-extrabold text-slate-950">Good work speaks <span class="text-mpr-blue">for itself.</span></h2><p class="mt-4 text-slate-600">MPR Roofing is rated 88% recommend across 19 Facebook reviews.</p></div>
+        <div class="mt-11 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <article class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm"><div class="flex gap-1 text-yellow-500 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><blockquote class="mt-5 text-xl font-semibold text-slate-800 leading-relaxed">“Top job Michael!”</blockquote><div class="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between"><div><p class="font-extrabold text-slate-900">Ian Hunter</p><p class="text-xs text-slate-500 mt-1">Peterlee roofing project · 11 August</p></div><i class="fa-brands fa-facebook text-2xl text-blue-600"></i></div></article>
+          <article class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm"><div class="flex gap-1 text-yellow-500 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><blockquote class="mt-5 text-xl font-semibold text-slate-800 leading-relaxed">“Thanks to MPR Roofing & Plastering for the roof work & fascias/guttering.”</blockquote><div class="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between"><div><p class="font-extrabold text-slate-900">DLC Structural</p><p class="text-xs text-slate-500 mt-1">Trade partner appreciation · 31 October</p></div><i class="fa-solid fa-people-group text-2xl text-mpr-blue"></i></div></article>
+        </div>
+        <p class="text-center text-xs text-slate-500 mt-6">Review excerpts and recommendation rating supplied for this website brief.</p>
+      </div>
+    </section>
+
+    <!-- Quote form -->
+    <section id="quote" class="py-20 sm:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-[.9fr_1.1fr] gap-12 items-start">
+          <div class="lg:sticky lg:top-28">
+            <p class="section-kicker">Get a free quote</p><h2 class="display mt-3 text-3xl sm:text-4xl font-extrabold text-slate-950">Tell us what your property <span class="text-mpr-blue">needs.</span></h2>
+            <p class="mt-5 text-slate-600 leading-relaxed">Fill in the short form and choose how you would like to send your enquiry. Your details will be added to a message addressed to Michael at MPR Roofing.</p>
+            <div class="mt-8 space-y-4">
+              <a href="tel:+447530686622" class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-sky-300"><span class="h-11 w-11 rounded-full bg-sky-100 text-mpr-blue grid place-items-center"><i class="fa-solid fa-phone"></i></span><span><span class="block text-xs text-slate-500">Call Michael directly</span><strong class="text-slate-900">07530 686622</strong></span><i class="fa-solid fa-arrow-up-right-from-square ml-auto text-slate-400"></i></a>
+              <a href="https://wa.me/447530686622" target="_blank" rel="noopener" class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-emerald-300"><span class="h-11 w-11 rounded-full bg-emerald-100 text-emerald-600 grid place-items-center text-xl"><i class="fa-brands fa-whatsapp"></i></span><span><span class="block text-xs text-slate-500">Message on WhatsApp</span><strong class="text-slate-900">07530 686622</strong></span><i class="fa-solid fa-arrow-up-right-from-square ml-auto text-slate-400"></i></a>
+              <a href="mailto:mprroofing@hotmail.com" class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-sky-300"><span class="h-11 w-11 rounded-full bg-slate-200 text-slate-700 grid place-items-center"><i class="fa-regular fa-envelope"></i></span><span><span class="block text-xs text-slate-500">Email your enquiry</span><strong class="text-slate-900 break-all">mprroofing@hotmail.com</strong></span><i class="fa-solid fa-arrow-up-right-from-square ml-auto text-slate-400"></i></a>
+            </div>
+            <p class="mt-6 text-xs text-slate-500"><i class="fa-solid fa-lock mr-1 text-slate-400"></i>Your form details are used to prepare the message you choose to send. No online database is used by this static page.</p>
+          </div>
+          <div class="rounded-3xl bg-slate-50 border border-slate-200 p-6 sm:p-9 shadow-sm">
+            <div class="flex items-center justify-between gap-4 mb-7"><div><h3 class="display text-xl sm:text-2xl font-extrabold text-slate-950">Request your free quote</h3><p class="text-sm text-slate-500 mt-1">No-obligation enquiry · Takes about a minute</p></div><span class="h-12 w-12 rounded-2xl bg-sky-100 text-mpr-blue grid place-items-center text-xl"><i class="fa-solid fa-clipboard-list"></i></span></div>
+            <form id="quote-form" class="space-y-5" novalidate>
+              <div><label for="full-name" class="block text-sm font-bold text-slate-800 mb-2">Full name <span class="text-red-500">*</span></label><input class="form-field" id="full-name" name="name" type="text" placeholder="Your name" autocomplete="name" required maxlength="100" /></div>
+              <div class="grid sm:grid-cols-2 gap-5"><div><label for="postcode" class="block text-sm font-bold text-slate-800 mb-2">Postcode <span class="text-red-500">*</span></label><input class="form-field uppercase" id="postcode" name="postcode" type="text" placeholder="e.g. DH6 2TS" autocomplete="postal-code" required maxlength="12" /></div><div><label for="service" class="block text-sm font-bold text-slate-800 mb-2">Service needed <span class="text-red-500">*</span></label><select class="form-field" id="service" name="service" required><option value="" disabled selected>Select a service</option><option>Free Roof Inspection</option><option>Leak / Storm Repair</option><option>Full New Roof</option><option>Flat Roof</option><option>Fascias & Guttering</option><option>Chimney / Repointing / Plastering</option><option>Solar Installation</option><option>Other / Not Sure</option></select></div></div>
+              <div><label for="details" class="block text-sm font-bold text-slate-800 mb-2">Brief description of the work <span class="text-red-500">*</span></label><textarea class="form-field min-h-[130px] resize-y" id="details" name="details" placeholder="Tell us what has happened or what work you are planning..." required maxlength="1500"></textarea></div>
+              <div id="form-error" class="hidden rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700" role="alert"></div>
+              <div class="grid sm:grid-cols-2 gap-3 pt-1">
+                <button type="button" id="send-whatsapp" class="rounded-xl bg-[#25D366] hover:bg-[#1fbd5b] text-white px-5 py-4 font-extrabold flex items-center justify-center gap-2 transition"><i class="fa-brands fa-whatsapp text-xl"></i> Send via WhatsApp</button>
+                <button type="button" id="send-email" class="rounded-xl bg-slate-900 hover:bg-slate-800 text-white px-5 py-4 font-extrabold flex items-center justify-center gap-2 transition"><i class="fa-regular fa-envelope"></i> Send via Email</button>
+              </div>
+              <p class="text-[11px] leading-relaxed text-slate-500">Selecting a button opens WhatsApp or your device's email app with your enquiry filled in. Please review and press <strong>Send</strong> in that app to deliver it to MPR Roofing.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-mpr-ink text-white pt-16 pb-28 md:pb-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+          <div class="lg:col-span-1"><div class="flex items-center gap-3"><img src="logo.jpg" alt="MPR Roofing logo" class="w-16 h-12 object-contain rounded" onerror="this.style.display='none'"/><div><p class="display font-black">MPR ROOFING</p><p class="text-[10px] tracking-[.18em] uppercase text-slate-400">& Plastering</p></div></div><p class="mt-5 text-sm text-slate-400 leading-relaxed">Roofing, solar integration and plastering services for homeowners across Peterlee, County Durham and the North East.</p><p class="mt-4 text-xs text-slate-500">88% recommend · 19 Facebook reviews</p></div>
+          <div><h3 class="font-extrabold text-sm">Explore</h3><div class="mt-5 flex flex-col gap-3 text-sm text-slate-400"><a class="hover:text-sky-300" href="#services" onclick="showMainAndScroll('services',event)">Our Services</a><a class="hover:text-sky-300" href="#projects" onclick="showMainAndScroll('projects',event)">Completed Projects</a><a class="hover:text-sky-300" href="#why-us" onclick="showMainAndScroll('why-us',event)">Why Choose MPR</a><a class="hover:text-sky-300" href="#reviews" onclick="showMainAndScroll('reviews',event)">Customer Feedback</a><a class="hover:text-sky-300" href="#quote" onclick="showMainAndScroll('quote',event)">Get a Free Quote</a></div></div>
+          <div><h3 class="font-extrabold text-sm">Contact Michael</h3><div class="mt-5 flex flex-col gap-4 text-sm"><a class="text-slate-300 hover:text-sky-300" href="tel:+447530686622"><i class="fa-solid fa-phone text-sky-400 w-5"></i> 07530 686622</a><a class="text-slate-300 hover:text-sky-300" href="tel:+441915261451"><i class="fa-solid fa-phone-volume text-sky-400 w-5"></i> 0191 526 1451</a><a class="text-slate-300 hover:text-sky-300 break-all" href="mailto:mprroofing@hotmail.com"><i class="fa-regular fa-envelope text-sky-400 w-5"></i> mprroofing@hotmail.com</a><a class="text-slate-300 hover:text-emerald-300" href="https://wa.me/447530686622" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp text-emerald-400 w-5"></i> WhatsApp Michael</a></div></div>
+          <div><h3 class="font-extrabold text-sm">Service Area</h3><p class="mt-5 text-sm text-slate-400 leading-relaxed">43 Abbeydale Gardens,<br/>Peterlee, County Durham,<br/>DH6 2TS, United Kingdom</p><p class="mt-3 text-sm text-slate-400 leading-relaxed">Peterlee · Sunderland · Hartlepool · Seaham · North East UK</p><p class="mt-3 inline-flex items-center gap-2 text-xs font-bold text-sky-300"><i class="fa-solid fa-clock"></i> Emergency enquiries 24/7</p></div>
+        </div>
+        <div class="pt-7 flex flex-col sm:flex-row gap-3 items-center justify-between text-xs text-slate-500"><p>© <span id="current-year"></span> MPR Roofing & Plastering. All rights reserved.</p><p>Local roofing & plastering in Peterlee and the North East.</p></div>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10"><div class="rounded-2xl overflow-hidden border border-white/10"><iframe title="Map showing MPR Roofing in Peterlee" class="map-frame w-full h-[250px] sm:h-[300px]" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=43%20Abbeydale%20Gardens%2C%20Peterlee%2C%20DH6%202TS%2C%20United%20Kingdom&output=embed"></iframe></div></div>
+    </footer>
+  </main>
+
+  <!-- Project detail SPA view -->
+  <main id="project-view" class="hidden min-h-screen bg-slate-50">
+    <div class="bg-mpr-ink text-white"><div class="max-w-7xl mx-auto px-4 sm:px-6 py-5"><button id="back-to-projects" class="inline-flex items-center gap-2 text-sm font-bold text-sky-300 hover:text-white"><i class="fa-solid fa-arrow-left"></i> Back to all projects</button></div></div>
+    <div id="project-detail-content" class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-14"></div>
+  </main>
+
+  <!-- Image lightbox -->
+  <div id="lightbox" class="hidden fixed inset-0 z-[80] bg-black/95 p-3 sm:p-6" role="dialog" aria-modal="true" aria-label="Project photo viewer">
+    <div class="max-w-7xl mx-auto h-full flex flex-col">
+      <div class="flex items-center justify-between text-white pb-3"><p id="lightbox-caption" class="text-sm font-semibold"></p><button id="lightbox-close" class="h-10 w-10 rounded-full bg-white/10 hover:bg-white/20 text-white text-xl" aria-label="Close image viewer"><i class="fa-solid fa-xmark"></i></button></div>
+      <div class="flex-1 min-h-0 flex items-center justify-center relative">
+        <button id="lightbox-prev" class="absolute left-0 sm:left-3 z-10 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 text-white" aria-label="Previous photo"><i class="fa-solid fa-chevron-left"></i></button>
+        <img id="lightbox-image" class="max-h-full max-w-full object-contain" alt="Project photo" />
+        <button id="lightbox-next" class="absolute right-0 sm:right-3 z-10 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 text-white" aria-label="Next photo"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+      <div class="text-center text-slate-400 text-xs py-3"><span id="lightbox-count"></span> · Use arrow keys or swipe to navigate</div>
+    </div>
+  </div>
+
+  <!-- Sticky mobile actions -->
+  <div class="mobile-action-bar fixed bottom-0 left-0 right-0 z-50 md:hidden grid grid-cols-3 gap-px bg-slate-900 shadow-[0_-8px_30px_rgba(0,0,0,.2)]">
+    <a class="min-h-[66px] flex flex-col items-center justify-center gap-1 bg-mpr-blue text-white font-bold text-[11px]" href="tel:+447530686622"><i class="fa-solid fa-phone text-lg"></i>Call Now</a>
+    <a class="min-h-[66px] flex flex-col items-center justify-center gap-1 bg-[#25D366] text-white font-bold text-[11px]" href="https://wa.me/447530686622?text=Hi%20Michael%2C%20I%27d%20like%20to%20request%20a%20free%20quote." target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp text-xl"></i>WhatsApp</a>
+    <a class="min-h-[66px] flex flex-col items-center justify-center gap-1 bg-slate-800 text-white font-bold text-[11px]" href="mailto:mprroofing@hotmail.com?subject=Free%20Roofing%20%2F%20Plastering%20Quote%20Enquiry"><i class="fa-regular fa-envelope text-lg"></i>Email Us</a>
+  </div>
+
+  <!-- Floating desktop quick contact -->
+  <div class="desktop-dock fixed right-5 bottom-6 z-30 hidden md:flex flex-col gap-3">
+    <a href="https://wa.me/447530686622" target="_blank" rel="noopener" class="h-14 w-14 rounded-full bg-[#25D366] text-white shadow-xl grid place-items-center text-2xl hover:scale-105 transition" aria-label="WhatsApp MPR Roofing"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="tel:+447530686622" class="h-14 w-14 rounded-full bg-mpr-blue text-white shadow-xl grid place-items-center text-xl hover:scale-105 transition" aria-label="Call MPR Roofing"><i class="fa-solid fa-phone"></i></a>
+  </div>
+
+  <script>
+    'use strict';
+
+    const BUSINESS = {
+      name: 'MPR Roofing & Plastering',
+      contact: 'Michael',
+      phone: '+447530686622',
+      whatsapp: '447530686622',
+      landline: '+441915261451',
+      email: 'mprroofing@hotmail.com'
+    };
+
+    // Project image filenames are kept exactly as supplied in the website brief.
+    const PROJECTS_DATA = [
+      {
+        id: "4-nov-dormer-cladding",
+        date: "4 November",
+        location: "Peterlee, County Durham",
+        category: "Cladding, Fascia & Solar Proofing",
+        title: "Dormer Cladding, UPVC Fascia & Gutter Rectification",
+        shortSummary: "Rectified previously incorrect dormer work with new anthracite external cladding, UPVC fascia, guttering, lead flashing, and solar bird-mesh protection.",
+        fullDescription: "New external anthracite shiplap cladding fitted along with brand-new UPVC fascia, soffits, lead valley flashing, and high-capacity guttering to this dormer after it had previously been fitted incorrectly by another contractor. Completed alongside bird-proofing mesh installation beneath the adjacent roof solar array for total weather and pest protection.",
+        coverImage: "4 nov.jpg",
+        images: ["4 nov.jpg", "4 nov-1.jpg", "4 nov-2.jpg"],
+        tags: ["Cladding", "Fascias & guttering", "Solar bird-proofing"],
+        filters: ["cladding"]
+      },
+      {
+        id: "31-oct-lime-mortar-restoration",
+        date: "31 October",
+        location: "North East UK",
+        category: "Plastering, Render & Masonry",
+        title: "Breathable Masonry Restoration, Lime Repointing & Outbuilding Renovation",
+        shortSummary: "Stripped trapping render so the building can breathe, followed by sandblasting, lime mortar repointing, new sills, and a concrete outbuilding floor.",
+        fullDescription: "FINALLY THE BUILDING CAN BREATHE! Trapped moisture behind damaged cement render can cause severe structural decay. Our team stripped back the failing render to expose the stonework, preparing the elevation for a full sandblast, deep rake-out, and traditional breathable lime mortar repointing. We also installed a brand-new concrete floor and replacement sills in the adjoining outbuilding, plus full roof, fascia, and guttering upgrades in collaboration with DLC Structural.",
+        coverImage: "31 oct.jpg",
+        images: ["31 oct.jpg", "31 oct-1.jpg", "31 oct-2.jpg", "31 oct-3.jpg", "31 oct-4.jpg"],
+        tags: ["Lime mortar", "Masonry restoration", "Outbuilding renovation"],
+        filters: ["plaster"]
+      },
+      {
+        id: "22-oct-roofing-overhaul",
+        date: "22 October",
+        location: "County Durham",
+        category: "Full Roof Replacement",
+        title: "Complete Residential Roof Replacement & Weatherproofing",
+        shortSummary: "Full pitched roof overhaul delivering storm-ready protection and crisp ridge and verge detailing for a local North East homeowner.",
+        fullDescription: "Another complete residential roofing transformation by the MPR Roofing squad. Stripped back ageing materials and installed new breathable membrane, treated timber battens, interlocking roof tiles, and weather-tight ridge detailing built to withstand heavy North East rainfall and winter gales.",
+        coverImage: "22 oct.jpg",
+        images: ["22 oct.jpg", "22 oct -1.jpg", "22 oct-3.jpg"],
+        tags: ["Full re-roof", "Pitched roof", "Weatherproofing"],
+        filters: ["roof"]
+      },
+      {
+        id: "8-oct-peterlee-roofing",
+        date: "8 October",
+        location: "Peterlee, DH6",
+        category: "Pitched & Flat Roofs",
+        title: "Dual Peterlee Roofing Projects: Pitched, Flat Roofs & Leadwork",
+        shortSummary: "Two complete residential roofing installations finished in a single week in Peterlee, covering pitched roofs, flat roofs, leadwork, and guttering.",
+        fullDescription: "Completed two full roofing projects in one week for homeowners right here in Peterlee. Scope of work covered pitched roof tiling, modern flat roof weatherproofing, precision lead flashing around chimneys and abutments, and new UPVC fascias and guttering.",
+        coverImage: "8 oct -1.jpg",
+        images: ["8 oct -1.jpg", "8 oct -2.jpg"],
+        tags: ["Pitched roof", "Flat roof", "Leadwork"],
+        filters: ["roof", "flat"]
+      },
+      {
+        id: "3-oct-double-roof-solar",
+        date: "3 October",
+        location: "Peterlee & North East",
+        category: "Double Roof & Solar Installation",
+        title: "Double Pitched Roof Replacement & Integrated Solar Panel Array",
+        shortSummary: "Full double-roof re-tiling over high-tensile breathable membrane with treated battens and a sleek, flush-mounted solar panel installation.",
+        fullDescription: "Major double-roof replacement carried out by our specialist roofing and solar squad. We stripped the existing roof, laid heavy-duty breathable sarking membrane and graded timber battens, tiled the double elevation with modern anthracite interlocking tiles, and mounted a sleek all-black solar panel array.",
+        coverImage: "3 oct double roofing.jpg",
+        images: ["3 oct double roofing.jpg", "3 oct double roofing-1.jpg", "3 oct double roofing-2.jpg"],
+        tags: ["Double re-roof", "Solar panels", "Pitched roof"],
+        filters: ["roof"]
+      },
+      {
+        id: "11-aug-peterlee-transformation",
+        date: "11 August",
+        location: "Peterlee, County Durham",
+        category: "Flat Roofs & Skylights",
+        title: "Peterlee Pitched & Flat Roof Transformation with Skylight Integration",
+        shortSummary: "Multi-elevation pitched and flat roof upgrade in Peterlee with integrated roof glazing and chimney refurbishment—praised 5-stars by the homeowner.",
+        fullDescription: "Comprehensive roofing project in Peterlee combining a durable charcoal flat-roof membrane system, pitched roof slating, skylight window integration, and brick chimney stack repointing. Earned real-time appreciation from homeowner Ian Hunter ('Top job Michael!').",
+        coverImage: "11 aug project(1).jpg",
+        images: ["11 aug project(1).jpg", "11 aug project(2).jpg", "11 aug project(3).jpg", "11 aug project(4).jpg", "11 aug project(5).jpg", "11 aug project(6).jpg"],
+        tags: ["Flat roof", "Skylights", "Chimney work"],
+        filters: ["roof", "flat"]
+      },
+      {
+        id: "22-may-major-reroof",
+        date: "22 May",
+        location: "North East UK",
+        category: "Full Structural Re-Roof",
+        title: "Large-Scale Residential Re-Roofing & Slating Project",
+        shortSummary: "Major structural re-roofing and slating project engineered for multi-decade weather protection.",
+        fullDescription: "A large-scale residential re-roofing and slating contract completed by our full roofing squad. Engineered from the timber structure up with breathable underlay, treated battens, and durable slate/tile finishes built to protect the property for decades.",
+        coverImage: "22 may project.jpg",
+        images: ["22 may project.jpg", "22 may project(1).jpg", "22 may project(2).jpg", "22 may project(3).jpg"],
+        tags: ["Structural re-roof", "Slating", "Weather protection"],
+        filters: ["roof"]
+      }
+    ];
+
+    const mainView = document.getElementById('main-view');
+    const projectView = document.getElementById('project-view');
+    const detailContent = document.getElementById('project-detail-content');
+    const lightbox = document.getElementById('lightbox');
+    let currentProject = null;
+    let currentPhotoIndex = 0;
+    let activeFilter = 'all';
+    let touchStartX = null;
+
+    function imagePath(filename) {
+      // encodeURI preserves path separators while encoding spaces and parentheses.
+      return encodeURI(filename).replace(/'/g, '%27');
+    }
+
+    function imageMarkup(filename, alt, className = '') {
+      const safeAlt = String(alt || 'MPR Roofing project photo').replace(/"/g, '&quot;');
+      const src = imagePath(filename);
+      return `<img src="${src}" alt="${safeAlt}" class="${className}" loading="lazy" onerror="this.replaceWith(createImageFallback())">`;
+    }
+
+    function createImageFallback() {
+      const box = document.createElement('div');
+      box.className = 'image-placeholder';
+      box.innerHTML = '<i class="fa-regular fa-image text-3xl text-sky-400"></i><span class="text-xs">Project photo unavailable<br>Check the uploaded image files</span>';
+      return box;
+    }
+
+    function renderProjects(filter = 'all') {
+      activeFilter = filter;
+      const grid = document.getElementById('projects-grid');
+      const projects = PROJECTS_DATA.filter(project => filter === 'all' || project.filters.includes(filter));
+      grid.innerHTML = projects.map(project => `
+        <article class="project-card bg-white rounded-2xl border border-slate-200 overflow-hidden" tabindex="0" role="button" aria-label="View project: ${project.title.replace(/"/g, '&quot;')}" data-project="${project.id}">
+          <div class="project-image relative overflow-hidden">${imageMarkup(project.coverImage, project.title, '')}
+            <span class="absolute top-3 left-3 rounded-full bg-mpr-ink/90 text-white px-3 py-1.5 text-[11px] font-bold"><i class="fa-regular fa-calendar mr-1.5 text-sky-300"></i>${project.date}</span>
+            <span class="absolute top-3 right-3 rounded-full bg-white/95 text-slate-900 px-3 py-1.5 text-[11px] font-extrabold"><i class="fa-regular fa-images mr-1.5 text-mpr-blue"></i>${project.images.length} Photos</span>
+          </div>
+          <div class="p-6"><p class="text-[10px] font-extrabold uppercase tracking-[.14em] text-mpr-blue">${project.category}</p><h3 class="display mt-2 font-extrabold text-lg text-slate-950 leading-snug">${project.title}</h3><p class="mt-3 text-sm text-slate-600 leading-relaxed">${project.shortSummary}</p><div class="mt-5 flex items-center justify-between gap-3"><span class="text-xs text-slate-500"><i class="fa-solid fa-location-dot mr-1 text-sky-500"></i>${project.location}</span><span class="text-sm text-mpr-blue font-extrabold whitespace-nowrap">View gallery <i class="fa-solid fa-arrow-right ml-1"></i></span></div></div>
+        </article>`).join('');
+      grid.querySelectorAll('[data-project]').forEach(card => {
+        const open = () => openProject(card.dataset.project, true);
+        card.addEventListener('click', open);
+        card.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); open(); } });
+      });
+      document.querySelectorAll('[data-filter]').forEach(button => button.classList.toggle('active', button.dataset.filter === filter));
+    }
+
+    function openProject(projectId, updateHistory = true) {
+      const project = PROJECTS_DATA.find(item => item.id === projectId);
+      if (!project) return showMainAndScroll('projects');
+      currentProject = project;
+      currentPhotoIndex = 0;
+      renderProjectDetail(project);
+      mainView.classList.add('hidden');
+      projectView.classList.remove('hidden');
+      document.getElementById('site-header').classList.remove('hidden');
+      if (updateHistory && location.hash !== `#project/${project.id}`) history.pushState({ projectId: project.id }, '', `#project/${project.id}`);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.title = `${project.title} | MPR Roofing`;
+    }
+
+    function renderProjectDetail(project) {
+      const tags = project.tags.map(tag => `<span class="rounded-full bg-sky-50 text-sky-800 border border-sky-100 px-3 py-1 text-xs font-bold">${tag}</span>`).join('');
+      detailContent.innerHTML = `
+        <div class="fade-in">
+          <div class="flex flex-wrap items-center gap-2 mb-5"><span class="rounded-full bg-mpr-ink text-white px-3 py-1.5 text-xs font-bold"><i class="fa-regular fa-calendar mr-1.5 text-sky-300"></i>${project.date}</span><span class="rounded-full bg-white border border-slate-200 text-slate-700 px-3 py-1.5 text-xs font-bold"><i class="fa-solid fa-location-dot mr-1.5 text-mpr-blue"></i>${project.location}</span><span class="rounded-full bg-sky-50 text-sky-800 px-3 py-1.5 text-xs font-bold">${project.images.length} project photos</span></div>
+          <div class="max-w-4xl"><p class="section-kicker">${project.category}</p><h1 class="display mt-3 text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 leading-tight">${project.title}</h1><p class="mt-5 text-slate-600 text-base sm:text-lg leading-relaxed">${project.fullDescription}</p><div class="mt-5 flex flex-wrap gap-2">${tags}</div></div>
+          <div class="mt-10 rounded-2xl overflow-hidden bg-black shadow-xl relative group" id="featured-viewer">
+            <div id="featured-image-container">${imageMarkup(project.images[0], `${project.title} photo 1`, 'viewer-image')}</div>
+            <button id="featured-prev" class="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-black/55 hover:bg-mpr-blue text-white"><i class="fa-solid fa-chevron-left"></i></button>
+            <button id="featured-next" class="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-black/55 hover:bg-mpr-blue text-white"><i class="fa-solid fa-chevron-right"></i></button>
+            <button id="featured-open" class="absolute bottom-4 right-4 rounded-lg bg-black/60 hover:bg-black/80 text-white text-xs font-bold px-3 py-2"><i class="fa-solid fa-expand mr-2"></i>View full image</button>
+            <span id="featured-counter" class="absolute bottom-4 left-4 rounded-lg bg-black/60 text-white text-xs px-3 py-2">1 / ${project.images.length}</span>
+          </div>
+          <div class="mt-5"><h2 class="display text-lg font-extrabold text-slate-950 mb-3">Browse project photos</h2><div id="thumbnail-strip" class="flex gap-3 overflow-x-auto pb-3"></div></div>
+          <div class="mt-8"><h2 class="display text-xl sm:text-2xl font-extrabold text-slate-950 mb-5">Every angle of the job</h2><div id="detail-gallery" class="detail-gallery-grid"></div></div>
+          <div class="mt-14 rounded-3xl bg-mpr-ink text-white p-7 sm:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-7"><div class="max-w-2xl"><p class="section-kicker text-sky-300">Planning similar work?</p><h2 class="display mt-2 text-2xl sm:text-3xl font-extrabold">Need similar work on your property?</h2><p class="mt-3 text-slate-300 leading-relaxed">Contact Michael and the MPR Roofing team today for a free, no-obligation inspection.</p></div><div class="flex flex-col sm:flex-row flex-wrap gap-3"><a class="btn-primary rounded-xl px-5 py-3 font-bold text-center" href="tel:+447530686622"><i class="fa-solid fa-phone mr-2"></i>Call</a><a class="rounded-xl bg-[#25D366] hover:bg-[#1fbd5b] px-5 py-3 font-bold text-center" href="https://wa.me/447530686622?text=${encodeURIComponent(`Hi Michael, I saw the ${project.title} project on your website and would like to discuss similar work.`)}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp mr-2"></i>WhatsApp</a><a class="rounded-xl bg-white/10 hover:bg-white/20 px-5 py-3 font-bold text-center" href="mailto:mprroofing@hotmail.com?subject=${encodeURIComponent('Enquiry about a similar MPR Roofing project')}"><i class="fa-regular fa-envelope mr-2"></i>Email</a></div></div>
+        </div>`;
+      renderFeaturedPhoto();
+      renderThumbnails();
+      renderDetailGrid();
+      document.getElementById('featured-prev').addEventListener('click', () => changePhoto(-1));
+      document.getElementById('featured-next').addEventListener('click', () => changePhoto(1));
+      document.getElementById('featured-open').addEventListener('click', () => openLightbox(currentPhotoIndex));
+      const viewer = document.getElementById('featured-viewer');
+      viewer.addEventListener('touchstart', event => { touchStartX = event.changedTouches[0].screenX; }, { passive:true });
+      viewer.addEventListener('touchend', event => {
+        if (touchStartX === null) return;
+        const distance = event.changedTouches[0].screenX - touchStartX;
+        if (Math.abs(distance) > 45) changePhoto(distance > 0 ? -1 : 1);
+        touchStartX = null;
+      }, { passive:true });
+    }
+
+    function renderFeaturedPhoto() {
+      if (!currentProject) return;
+      const filename = currentProject.images[currentPhotoIndex];
+      const container = document.getElementById('featured-image-container');
+      if (container) container.innerHTML = imageMarkup(filename, `${currentProject.title} photo ${currentPhotoIndex + 1}`, 'viewer-image');
+      const counter = document.getElementById('featured-counter');
+      if (counter) counter.textContent = `${currentPhotoIndex + 1} / ${currentProject.images.length}`;
+      document.querySelectorAll('.thumb').forEach((thumb, index) => thumb.classList.toggle('active', index === currentPhotoIndex));
+    }
+
+    function renderThumbnails() {
+      const strip = document.getElementById('thumbnail-strip');
+      if (!strip || !currentProject) return;
+      strip.innerHTML = currentProject.images.map((filename, index) => `<button type="button" class="thumb ${index === currentPhotoIndex ? 'active' : ''}" data-thumb="${index}" aria-label="Show photo ${index + 1}">${imageMarkup(filename, `Thumbnail ${index + 1}`, '')}</button>`).join('');
+      strip.querySelectorAll('[data-thumb]').forEach(button => button.addEventListener('click', () => { currentPhotoIndex = Number(button.dataset.thumb); renderFeaturedPhoto(); renderThumbnails(); }));
+    }
+
+    function renderDetailGrid() {
+      const grid = document.getElementById('detail-gallery');
+      if (!grid || !currentProject) return;
+      grid.innerHTML = currentProject.images.map((filename, index) => `<button type="button" data-grid-photo="${index}" aria-label="Open project photo ${index + 1}">${imageMarkup(filename, `${currentProject.title} gallery photo ${index + 1}`, '')}</button>`).join('');
+      grid.querySelectorAll('[data-grid-photo]').forEach(button => button.addEventListener('click', () => openLightbox(Number(button.dataset.gridPhoto))));
+    }
+
+    function changePhoto(direction) {
+      if (!currentProject) return;
+      currentPhotoIndex = (currentPhotoIndex + direction + currentProject.images.length) % currentProject.images.length;
+      renderFeaturedPhoto();
+      renderThumbnails();
+    }
+
+    function openLightbox(index) {
+      if (!currentProject) return;
+      currentPhotoIndex = index;
+      updateLightbox();
+      lightbox.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('lightbox-close').focus();
+    }
+
+    function updateLightbox() {
+      if (!currentProject) return;
+      const filename = currentProject.images[currentPhotoIndex];
+      const image = document.getElementById('lightbox-image');
+      image.src = imagePath(filename);
+      image.alt = `${currentProject.title} photo ${currentPhotoIndex + 1}`;
+      image.onerror = () => { image.replaceWith(createImageFallback()); };
+      document.getElementById('lightbox-caption').textContent = currentProject.title;
+      document.getElementById('lightbox-count').textContent = `${currentPhotoIndex + 1} of ${currentProject.images.length}`;
+      renderFeaturedPhoto();
+      renderThumbnails();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function showMainAndScroll(sectionId = 'home', event) {
+      if (event) event.preventDefault();
+      document.getElementById('mobile-menu').classList.add('hidden');
+      document.getElementById('menu-toggle').setAttribute('aria-expanded', 'false');
+      document.getElementById('menu-toggle').innerHTML = '<i class="fa-solid fa-bars"></i>';
+      if (!projectView.classList.contains('hidden')) {
+        projectView.classList.add('hidden');
+        mainView.classList.remove('hidden');
+        if (location.hash.startsWith('#project/')) history.replaceState({}, '', `#${sectionId}`);
+      }
+      document.title = 'MPR Roofing & Plastering | Peterlee & North East';
+      requestAnimationFrame(() => {
+        const target = document.getElementById(sectionId);
+        if (target) target.scrollIntoView({ behavior:'smooth', block:'start' });
+      });
+    }
+
+    function routeFromHash() {
+      const match = location.hash.match(/^#project\/(.+)$/);
+      if (match) {
+        openProject(decodeURIComponent(match[1]), false);
+      } else {
+        projectView.classList.add('hidden');
+        mainView.classList.remove('hidden');
+        document.title = 'MPR Roofing & Plastering | Peterlee & North East';
+      }
+    }
+
+    function quoteValues() {
+      const form = document.getElementById('quote-form');
+      const name = form.elements.name.value.trim();
+      const postcode = form.elements.postcode.value.trim().toUpperCase();
+      const service = form.elements.service.value;
+      const details = form.elements.details.value.trim();
+      const error = document.getElementById('form-error');
+      error.classList.add('hidden');
+      error.textContent = '';
+      if (!name || !postcode || !service || !details) {
+        error.textContent = 'Please complete all four fields before choosing how to send your enquiry.';
+        error.classList.remove('hidden');
+        const firstMissing = [form.elements.name, form.elements.postcode, form.elements.service, form.elements.details].find(field => !field.value.trim());
+        if (firstMissing) firstMissing.focus();
+        return null;
+      }
+      if (name.length > 100 || postcode.length > 12 || details.length > 1500) {
+        error.textContent = 'Please check your details and keep the description under 1,500 characters.';
+        error.classList.remove('hidden');
+        return null;
+      }
+      return { name, postcode, service, details };
+    }
+
+    function buildQuoteMessage(data) {
+      return `Hi Michael,\n\nI'd like to request a free, no-obligation quote from MPR Roofing & Plastering.\n\nName: ${data.name}\nPostcode: ${data.postcode}\nService needed: ${data.service}\nDescription: ${data.details}\n\nPlease let me know the next steps. Thank you.`;
+    }
+
+    document.getElementById('send-whatsapp').addEventListener('click', () => {
+      const data = quoteValues();
+      if (!data) return;
+      const url = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(buildQuoteMessage(data))}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    });
+
+    document.getElementById('send-email').addEventListener('click', () => {
+      const data = quoteValues();
+      if (!data) return;
+      const subject = encodeURIComponent(`Free quote enquiry – ${data.service} – ${data.postcode}`);
+      const body = encodeURIComponent(buildQuoteMessage(data));
+      window.location.href = `mailto:${BUSINESS.email}?subject=${subject}&body=${body}`;
+    });
+
+    document.getElementById('project-filters').addEventListener('click', event => {
+      const button = event.target.closest('[data-filter]');
+      if (button) renderProjects(button.dataset.filter);
+    });
+    document.getElementById('back-to-projects').addEventListener('click', () => showMainAndScroll('projects'));
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    document.getElementById('lightbox-prev').addEventListener('click', () => { changePhoto(-1); updateLightbox(); });
+    document.getElementById('lightbox-next').addEventListener('click', () => { changePhoto(1); updateLightbox(); });
+    lightbox.addEventListener('click', event => { if (event.target === lightbox) closeLightbox(); });
+    lightbox.addEventListener('touchstart', event => { touchStartX = event.changedTouches[0].screenX; }, { passive:true });
+    lightbox.addEventListener('touchend', event => {
+      if (touchStartX === null) return;
+      const distance = event.changedTouches[0].screenX - touchStartX;
+      if (Math.abs(distance) > 45) { changePhoto(distance > 0 ? -1 : 1); updateLightbox(); }
+      touchStartX = null;
+    }, { passive:true });
+
+    document.addEventListener('keydown', event => {
+      if (!lightbox.classList.contains('hidden')) {
+        if (event.key === 'Escape') closeLightbox();
+        if (event.key === 'ArrowLeft') { changePhoto(-1); updateLightbox(); }
+        if (event.key === 'ArrowRight') { changePhoto(1); updateLightbox(); }
+      } else if (!projectView.classList.contains('hidden')) {
+        if (event.key === 'ArrowLeft') changePhoto(-1);
+        if (event.key === 'ArrowRight') changePhoto(1);
+      }
+    });
+
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      const menu = document.getElementById('mobile-menu');
+      const isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden');
+      document.getElementById('menu-toggle').setAttribute('aria-expanded', String(!isOpen));
+      document.getElementById('menu-toggle').innerHTML = isOpen ? '<i class="fa-solid fa-bars"></i>' : '<i class="fa-solid fa-xmark"></i>';
+    });
+
+    window.addEventListener('hashchange', routeFromHash);
+    window.addEventListener('popstate', routeFromHash);
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    renderProjects();
+    routeFromHash();
+  </script>
+</body>
+</html>
